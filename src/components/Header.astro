@@ -4,10 +4,27 @@
 <header class="header">
   <div class="container">
     <div class="nav-wrapper">
-      <div class="logo">
-        <a href="#home">
-          <img src="/logo.jpg" alt="Xtra Otp Tax LLC" />
-        </a>
+      <div class="logo-section">
+        <div class="logo">
+          <a href="#home">
+            <img src="/logo.png" alt="Xtra Otp Tax LLC" />
+          </a>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <a href="tel:7021234567">(702) 123-4567</a>
+          </div>
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <a href="mailto:xtraotptax@gmail.com">xtraotptax@gmail.com</a>
+          </div>
+        </div>
       </div>
       <nav class="nav">
         <ul class="nav-list">
@@ -46,6 +63,12 @@
     padding: 1rem 0;
   }
 
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   .logo a {
     display: block;
     transition: opacity 0.3s ease;
@@ -60,6 +83,35 @@
     width: auto;
     max-width: 180px;
     object-fit: contain;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-item svg {
+    color: var(--color-sage);
+    flex-shrink: 0;
+  }
+
+  .contact-item a {
+    color: var(--color-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .contact-item a:hover {
+    color: var(--color-sage);
   }
 
   .nav-list {
@@ -114,7 +166,32 @@
     transition: all 0.3s ease;
   }
 
+  @media (max-width: 1024px) {
+    .logo-section {
+      gap: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .contact-item a {
+      font-size: 0.75rem;
+    }
+
+    .contact-item svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
   @media (max-width: 768px) {
+    .contact-item a {
+      font-size: 0.7rem;
+    }
+
     .nav {
       display: none;
       position: absolute;
@@ -160,6 +237,25 @@
 
     .mobile-menu-btn.active span:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-section {
+      gap: 0.75rem;
+    }
+
+    .contact-info {
+      gap: 0.15rem;
+    }
+
+    .contact-item a {
+      font-size: 0.65rem;
+    }
+
+    .contact-item svg {
+      width: 10px;
+      height: 10px;
     }
   }
 </style>

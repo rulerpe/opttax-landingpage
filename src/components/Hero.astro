@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import vegasImage from '../assets/las-vegas-802193.jpg';
+import vegasImage from '../assets/home-background.jpg';
 ---
 
 <section id="home" class="hero">
@@ -80,7 +80,7 @@ import vegasImage from '../assets/las-vegas-802193.jpg';
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
     z-index: 1;
   }
 
@@ -99,13 +99,15 @@ import vegasImage from '../assets/las-vegas-802193.jpg';
     margin-bottom: 1.5rem;
     line-height: 1.1;
     color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
 
   .hero-buttons {

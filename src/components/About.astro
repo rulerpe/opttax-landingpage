@@ -43,44 +43,44 @@
         </div>
       </div>
     </div>
-    <div class="team-section">
-      <h3>Meet Our Team</h3>
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="team-photo">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="120" fill="var(--color-sage-light)" rx="60"/>
-              <circle cx="60" cy="45" r="20" fill="var(--color-white)"/>
-              <path d="M30 100C30 80 43 70 60 70C77 70 90 80 90 100" fill="var(--color-white)"/>
-            </svg>
+    <div class="reviews-section">
+      <h3>What Our Clients Say</h3>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">
+            <span>★★★★★</span>
           </div>
-          <h4>Sarah Johnson</h4>
-          <p class="role">Senior Tax Advisor</p>
-          <p>CPA with 12+ years of experience in corporate and individual tax planning.</p>
+          <blockquote>
+            "Xtra Otp Tax LLC has been handling our business taxes for three years now. Their attention to detail and proactive tax planning strategies have saved us thousands of dollars."
+          </blockquote>
+          <div class="reviewer">
+            <h4>Jennifer Martinez</h4>
+            <p class="company">Owner, Martinez Construction</p>
+          </div>
         </div>
-        <div class="team-member">
-          <div class="team-photo">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="120" fill="var(--color-sage-light)" rx="60"/>
-              <circle cx="60" cy="45" r="20" fill="var(--color-white)"/>
-              <path d="M30 100C30 80 43 70 60 70C77 70 90 80 90 100" fill="var(--color-white)"/>
-            </svg>
+        <div class="review-card">
+          <div class="stars">
+            <span>★★★★★</span>
           </div>
-          <h4>Michael Chen</h4>
-          <p class="role">Business Consultant</p>
-          <p>MBA and CPA specializing in small business financial strategy and growth planning.</p>
+          <blockquote>
+            "Professional, reliable, and knowledgeable. They made the complex tax process simple and stress-free. I highly recommend their services to anyone looking for quality accounting support."
+          </blockquote>
+          <div class="reviewer">
+            <h4>David Thompson</h4>
+            <p class="company">Small Business Owner</p>
+          </div>
         </div>
-        <div class="team-member">
-          <div class="team-photo">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="120" height="120" fill="var(--color-sage-light)" rx="60"/>
-              <circle cx="60" cy="45" r="20" fill="var(--color-white)"/>
-              <path d="M30 100C30 80 43 70 60 70C77 70 90 80 90 100" fill="var(--color-white)"/>
-            </svg>
+        <div class="review-card">
+          <div class="stars">
+            <span>★★★★★</span>
           </div>
-          <h4>Emily Rodriguez</h4>
-          <p class="role">Financial Planner</p>
-          <p>Certified Financial Planner helping clients achieve their long-term financial goals.</p>
+          <blockquote>
+            "Outstanding service and expertise! They helped us restructure our finances and provided excellent guidance for our growing business. Truly exceptional professionals."
+          </blockquote>
+          <div class="reviewer">
+            <h4>Sarah Wilson</h4>
+            <p class="company">CEO, Tech Innovations LLC</p>
+          </div>
         </div>
       </div>
     </div>
@@ -153,55 +153,75 @@
     height: auto;
   }
 
-  .team-section {
+  .reviews-section {
     border-top: 2px solid var(--color-sage-light);
     padding-top: 4rem;
   }
 
-  .team-section h3 {
+  .reviews-section h3 {
     text-align: center;
     color: var(--color-dark);
     margin-bottom: 3rem;
   }
 
-  .team-grid {
+  .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
 
-  .team-member {
+  .review-card {
     background-color: var(--color-white);
     padding: 2rem;
     border-radius: 12px;
-    text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
   }
 
-  .team-member:hover {
+  .review-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
-  .team-photo {
+  .stars {
     margin-bottom: 1rem;
   }
 
-  .team-member h4 {
+  .stars span {
+    color: #FFD700;
+    font-size: 1.2rem;
+  }
+
+  blockquote {
+    font-style: italic;
+    color: var(--color-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--color-sage-light);
+    position: absolute;
+    top: -10px;
+    left: -15px;
+    line-height: 1;
+  }
+
+  .reviewer h4 {
     color: var(--color-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
   }
 
-  .role {
+  .company {
     color: var(--color-sage);
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .team-member p:last-child {
+    font-weight: 500;
     font-size: 0.9rem;
-    line-height: 1.5;
+    margin: 0;
   }
 
   @media (max-width: 768px) {
@@ -223,7 +243,7 @@
       font-size: 2rem;
     }
 
-    .team-grid {
+    .reviews-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
