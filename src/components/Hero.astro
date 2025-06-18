@@ -1,8 +1,18 @@
 ---
+import { Image } from 'astro:assets';
+import vegasImage from '../assets/las-vegas-802193.jpg';
 ---
 
 <section id="home" class="hero">
-  <div class="hero-background"></div>
+  <div class="hero-background">
+    <Image 
+      src={vegasImage} 
+      alt="Las Vegas night skyline" 
+      class="hero-bg-image"
+      loading="eager"
+      format="webp"
+    />
+  </div>
   <div class="container">
     <div class="hero-content">
       <div class="hero-text">
@@ -38,11 +48,6 @@
 
 <style>
   .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('/las-vegas-802193.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    background-repeat: no-repeat;
     color: var(--color-white);
     min-height: 100vh;
     display: flex;
@@ -58,7 +63,25 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+  }
+
+  .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
+    z-index: 1;
   }
 
   .hero-content {
@@ -114,10 +137,10 @@
     .hero {
       min-height: 100vh;
       padding-top: 100px;
-      background-attachment: scroll;
-      background-size: cover;
-      background-position: center 20%;
-      background-repeat: no-repeat;
+    }
+
+    .hero-bg-image {
+      object-position: center 20%;
     }
 
     .hero-content {
@@ -155,7 +178,10 @@
   @media (max-width: 480px) {
     .hero {
       min-height: 100vh;
-      background-position: center 30%;
+    }
+
+    .hero-bg-image {
+      object-position: center 30%;
     }
 
     .hero-text h1 {
