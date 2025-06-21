@@ -17,30 +17,13 @@ import vegasImage from '../assets/home-background.jpg';
   <div class="container">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Professional Tax & Accounting Services</h1>
+        <h1>Where Compliance Meets Confidence</h1>
         <p class="hero-subtitle">
-          Expert financial guidance for individuals and businesses. 
-          Trust Xtra Otp Tax LLC for comprehensive tax preparation, business consulting, and financial planning.
+          Expert Tobacco Tax guidance to help your business navigate the ever-changing landscape of state and federal regulations. Contact us today to stay compliant and protect your business.
         </p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">Get Started</a>
           <a href="#services" class="btn btn-secondary">Our Services</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="placeholder-image">
-          <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="var(--color-cream)" rx="8"/>
-            <rect x="50" y="50" width="300" height="200" fill="var(--color-sage-light)" rx="4"/>
-            <rect x="80" y="80" width="80" height="60" fill="var(--color-white)" rx="4"/>
-            <rect x="180" y="80" width="140" height="15" fill="var(--color-sage)" rx="2"/>
-            <rect x="180" y="105" width="100" height="10" fill="var(--color-gray)" rx="2"/>
-            <rect x="180" y="125" width="120" height="10" fill="var(--color-gray)" rx="2"/>
-            <rect x="80" y="160" width="240" height="2" fill="var(--color-sage)" rx="1"/>
-            <rect x="80" y="180" width="60" height="40" fill="var(--color-cream)" rx="2"/>
-            <rect x="160" y="180" width="60" height="40" fill="var(--color-cream)" rx="2"/>
-            <rect x="240" y="180" width="60" height="40" fill="var(--color-cream)" rx="2"/>
-          </svg>
         </div>
       </div>
     </div>
@@ -85,12 +68,16 @@ import vegasImage from '../assets/home-background.jpg';
   }
 
   .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     z-index: 2;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 800px;
   }
 
   .hero-text h1 {
@@ -114,26 +101,9 @@ import vegasImage from '../assets/home-background.jpg';
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-  }
-
-  .hero-image {
-    display: flex;
     justify-content: center;
-    align-items: center;
   }
 
-  .placeholder-image {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .placeholder-image svg {
-    max-width: 100%;
-    height: auto;
-  }
 
   @media (max-width: 768px) {
     .hero {
@@ -146,9 +116,7 @@ import vegasImage from '../assets/home-background.jpg';
     }
 
     .hero-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      text-align: center;
+      padding: 0 1rem;
     }
 
     .hero-text h1 {
@@ -163,18 +131,6 @@ import vegasImage from '../assets/home-background.jpg';
       justify-content: center;
     }
 
-    .hero-image {
-      order: -1;
-    }
-
-    .placeholder-image {
-      padding: 1rem;
-    }
-
-    .placeholder-image svg {
-      width: 300px;
-      height: 225px;
-    }
   }
 
   @media (max-width: 480px) {
