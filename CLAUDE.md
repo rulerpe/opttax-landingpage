@@ -32,7 +32,7 @@ A professional, responsive landing page for Xtra OTP Tax LLC accounting firm bui
 - **Shadows**: Subtle box shadows and text shadows for depth
 
 ## Contact Information
-- **Phone**: (702) 123-4567 (clickable tel: links)
+- **Phone**: (702) 756-4507 (clickable tel: links)
 - **Email**: xtraotptax@gmail.com (clickable mailto: links)
 - **Address**: 123 Business Ave, Suite 456, City, State 12345
 
