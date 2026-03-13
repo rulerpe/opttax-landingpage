@@ -27,10 +27,12 @@ import oucpaLogo from '../assets/oucpa-logo.png';
           <a href="#services" class="btn btn-secondary">Our Services</a>
         </div>
       </div>
-      <div class="hero-partner-card">
-        <p class="partner-text">
-          Need assistance with federal &amp; state income taxes and general accounting services? Check out our partner company Ou CPA LLC.
-        </p>
+      <div class="hero-partner-col">
+        <div class="hero-partner-card">
+          <p class="partner-text">
+            Need assistance with federal &amp; state income taxes and general accounting services? Check out our partner company Ou CPA LLC.
+          </p>
+        </div>
         <a
           href="https://www.oucpa.com/"
           target="_blank"
@@ -125,17 +127,21 @@ import oucpaLogo from '../assets/oucpa-logo.png';
     flex-wrap: wrap;
   }
 
-  /* Partner card */
-  .hero-partner-card {
+  /* Partner column */
+  .hero-partner-col {
     flex: 0 0 340px;
-    background-color: #E8F2EC;
-    border-radius: 16px;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
+  }
+
+  .hero-partner-card {
+    background-color: #E8F2EC;
+    border-radius: 16px;
+    padding: 2rem;
     text-align: center;
+    width: 100%;
   }
 
   .partner-text {
@@ -167,7 +173,7 @@ import oucpaLogo from '../assets/oucpa-logo.png';
   }
 
   @media (max-width: 900px) {
-    .hero-partner-card {
+    .hero-partner-col {
       flex: 0 0 280px;
     }
   }
@@ -205,7 +211,7 @@ import oucpaLogo from '../assets/oucpa-logo.png';
       justify-content: center;
     }
 
-    .hero-partner-card {
+    .hero-partner-col {
       flex: none;
       width: 100%;
       max-width: 480px;
