@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import vegasImage from '../assets/home-background.jpg';
+import oucpaLogo from '../assets/oucpa-logo.png';
 ---
 
 <section id="home" class="hero">
   <div class="hero-background">
-    <Image 
-      src={vegasImage} 
-      alt="Las Vegas night skyline background" 
+    <Image
+      src={vegasImage}
+      alt="Las Vegas night skyline background"
       class="hero-bg-image"
       loading="eager"
       quality={80}
@@ -24,6 +25,33 @@ import vegasImage from '../assets/home-background.jpg';
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">Get Started</a>
           <a href="#services" class="btn btn-secondary">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-partner-card">
+        <p class="partner-text">
+          Need assistance with federal &amp; state income taxes and general accounting services? Check out our partner company Ou CPA LLC.
+        </p>
+        <a
+          href="https://www.oucpa.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="partner-logo-link"
+        >
+          <Image
+            src={oucpaLogo}
+            alt="Ou CPA LLC - Partner Company"
+            class="partner-logo-image"
+            loading="eager"
+            quality={80}
+          />
+        </a>
+        <div class="partner-button-wrap">
+          <a
+            href="https://www.oucpa.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-partner"
+          >Visit Ou CPA LLC</a>
         </div>
       </div>
     </div>
@@ -69,19 +97,21 @@ import vegasImage from '../assets/home-background.jpg';
 
   .hero-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 2rem;
     position: relative;
     z-index: 2;
   }
 
   .hero-text {
-    text-align: center;
-    max-width: 800px;
+    text-align: left;
+    max-width: 500px;
+    flex: 1;
   }
 
   .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 2.6rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
@@ -101,9 +131,71 @@ import vegasImage from '../assets/home-background.jpg';
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  /* Partner card */
+  .hero-partner-card {
+    flex: 0 0 340px;
+    background-color: #E8F2EC;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .partner-text {
+    font-size: 1.2rem;
+    color: #2D3748;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .partner-logo-link {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .partner-logo-link:hover {
+    transform: scale(1.03);
+  }
+
+  .partner-logo-image {
+    width: 160px;
+    height: auto;
+    display: block;
+  }
+
+  .btn-partner {
+    display: inline-block;
+    background-color: var(--color-sage);
+    color: var(--color-white);
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .btn-partner:hover {
+    background-color: var(--color-sage-dark);
+  }
+
+  .partner-button-wrap {
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
 
+  @media (max-width: 900px) {
+    .hero-partner-card {
+      flex: 0 0 280px;
+    }
+  }
 
   @media (max-width: 768px) {
     .hero {
@@ -117,6 +209,13 @@ import vegasImage from '../assets/home-background.jpg';
 
     .hero-content {
       padding: 0 1rem;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-text {
+      max-width: 100%;
+      text-align: center;
     }
 
     .hero-text h1 {
@@ -131,6 +230,12 @@ import vegasImage from '../assets/home-background.jpg';
       justify-content: center;
     }
 
+    .hero-partner-card {
+      flex: none;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
   }
 
   @media (max-width: 480px) {
@@ -155,6 +260,14 @@ import vegasImage from '../assets/home-background.jpg';
       width: 100%;
       max-width: 250px;
       text-align: center;
+    }
+
+    .hero-partner-card {
+      padding: 1.5rem;
+    }
+
+    .partner-logo-image {
+      width: 130px;
     }
   }
 </style>
