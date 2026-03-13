@@ -147,14 +147,16 @@ import oucpaLogo from '../assets/oucpa-logo.png';
 
   .partner-logo-link {
     display: inline-block;
-    background-color: var(--color-sage);
+    background-color: var(--color-gray-light);
     border-radius: 12px;
     padding: 1.25rem 2rem;
-    transition: background-color 0.3s ease, transform 0.25s ease;
+    border: 2px solid var(--color-gray-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
   }
 
   .partner-logo-link:hover {
-    background-color: var(--color-sage-dark);
+    border-color: var(--color-sage);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     transform: translateY(-1px);
   }
 
