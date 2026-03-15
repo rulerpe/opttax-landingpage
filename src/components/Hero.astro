@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import vegasImage from '../assets/home-background.jpg';
+import oucpaLogo from '../assets/oucpa-logo.png';
 ---
 
 <section id="home" class="hero">
   <div class="hero-background">
-    <Image 
-      src={vegasImage} 
-      alt="Las Vegas night skyline background" 
+    <Image
+      src={vegasImage}
+      alt="Las Vegas night skyline background"
       class="hero-bg-image"
       loading="eager"
       quality={80}
@@ -25,6 +26,29 @@ import vegasImage from '../assets/home-background.jpg';
           <a href="#contact" class="btn btn-primary">Get Started</a>
           <a href="#services" class="btn btn-secondary">Our Services</a>
         </div>
+      </div>
+      <div class="hero-partner-col">
+        <div class="hero-partner-card">
+          <p class="partner-text">
+            Need assistance with federal &amp; state income taxes and general accounting services? Check out our partner company Ou CPA LLC.
+          </p>
+        </div>
+        <a
+          href="https://www.oucpa.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="partner-logo-link"
+        >
+          <Image
+            src={oucpaLogo}
+            alt="Ou CPA LLC - Partner Company"
+            class="partner-logo-image"
+            width={220}
+            height={220}
+            loading="eager"
+            quality={80}
+          />
+        </a>
       </div>
     </div>
   </div>
@@ -69,19 +93,21 @@ import vegasImage from '../assets/home-background.jpg';
 
   .hero-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 2rem;
     position: relative;
     z-index: 2;
   }
 
   .hero-text {
-    text-align: center;
-    max-width: 800px;
+    text-align: left;
+    max-width: 500px;
+    flex: 1;
   }
 
   .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 2.6rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
@@ -101,9 +127,58 @@ import vegasImage from '../assets/home-background.jpg';
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
+  /* Partner column */
+  .hero-partner-col {
+    flex: 0 0 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .hero-partner-card {
+    background-color: #E8F2EC;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .partner-text {
+    font-size: 1.2rem;
+    color: #2D3748;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .partner-logo-link {
+    display: inline-block;
+    background-color: var(--color-gray-light);
+    border-radius: 12px;
+    padding: 1.25rem 2rem;
+    border: 2px solid var(--color-gray-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+  }
+
+  .partner-logo-link:hover {
+    border-color: var(--color-sage);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .partner-logo-image {
+    width: 160px;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .hero-partner-col {
+      flex: 0 0 280px;
+    }
+  }
 
   @media (max-width: 768px) {
     .hero {
@@ -116,7 +191,14 @@ import vegasImage from '../assets/home-background.jpg';
     }
 
     .hero-content {
-      padding: 0 1rem;
+      padding: 0 1rem 2.5rem;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-text {
+      max-width: 100%;
+      text-align: center;
     }
 
     .hero-text h1 {
@@ -131,6 +213,12 @@ import vegasImage from '../assets/home-background.jpg';
       justify-content: center;
     }
 
+    .hero-partner-col {
+      flex: none;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
   }
 
   @media (max-width: 480px) {
@@ -155,6 +243,14 @@ import vegasImage from '../assets/home-background.jpg';
       width: 100%;
       max-width: 250px;
       text-align: center;
+    }
+
+    .hero-partner-card {
+      padding: 1.5rem;
+    }
+
+    .partner-logo-image {
+      width: 130px;
     }
   }
 </style>
